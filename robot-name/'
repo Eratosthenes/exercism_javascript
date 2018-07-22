@@ -1,0 +1,22 @@
+var names = []; 
+
+class Robot {
+
+    constructor () {
+        let letters = Array.from(Array(2), (x) => this.gen_letter());
+        let numbers = Array.from(Array(3), (x) => this.gen_number());
+
+        this.name = letters.concat(numbers).join('');    
+        names.push(this.name);
+    }
+
+    gen_letter () {
+        return String.fromCharCode('A'.charCodeAt() + Math.floor(Math.random()*26));
+    }
+
+    gen_number () {
+        return String(Math.floor(Math.random()*10));
+    }
+}
+
+module.exports = Robot;
